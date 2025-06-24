@@ -31,6 +31,15 @@ int main() {
     float densidade_populacional2;
     float pib_per_capita2;
 
+    //COMPARAÇÃO 
+    int atributo;
+    int opcao1,opcao2;
+    int pontos_carta1= 0;
+    int pontos_carta2 = 0;
+    int atributo1;
+    int atributo2;
+
+
     
     // Cadastro das Cartas:
     // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
@@ -101,6 +110,9 @@ int main() {
             // o PIB é float e o número de habitantes é int 
            //fazendo a divisão o resultado saira em float
 
+   
+    
+
     //menu interativo
     // Comparação de Cartas:
     // Desenvolva a lógica de comparação entre duas cartas.
@@ -112,6 +124,13 @@ int main() {
     printf("4 - PIB \n");
     printf("5 - Número de pontos turísticos\n");
     printf("6 - Densidade demográfica\n");
+
+    scanf("%d %d", &atributo1, &atributo2);
+
+    //Fazer as duas comparação 
+    for (int i = 0; i < 2; i++) {
+    int atributo = (i == 0) ? atributo1 : atributo2;
+
 
     switch (opcao) {
         
@@ -194,29 +213,15 @@ int main() {
     // Exibição dos Resultados:
     // Após realizar as comparações, exiba os resultados para o usuário.
     // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
-    printf("Carta 1\n\n");
-    printf("Estado : %c\n",estado1);
-    printf("Código :%s\n",codigo_da_carta1);
-    printf("Nome da cidade :%s\n ",nome_da_cidade1);
-    printf("População :%d\n",numero_habitantes1);
-    printf("Área :%.2f km²\n",area_cidade1);
-    printf("PIB :%.2f milhões de reais\n",pib1);
-    printf("Números de pontos turísticos :%d\n",pontos_turisticos1);
-    printf("Densidade populacional: %.2f hab/km² \n",densidade_populacional1);
-    printf("PIB per capita: %.2f reais  \n\n",pib_per_capita1);
-
     
-    //mostrar todos os dados da carta (2)
-    printf("Carta 2 \n\n");
-    printf("Estado : %c\n",estado2);
-    printf("Código :%s\n",codigo_da_carta2);
-    printf("Nome da cidade :%s\n ",nome_da_cidade2);
-    printf("População :%d\n",numero_habitantes2);
-    printf("Área :%.2f km²\n",area_cidade2);
-    printf("PIB :%.2f milhões de reais\n",pib2);
-    printf("Números de pontos turísticos :%d\n",pontos_turisticos2);
-    printf("Densidade populacional: %.2f hab/km² \n",densidade_populacional2);
-    printf("PIB per capita: %.2f reais \n\n",pib_per_capita2);
+     // resultado final 
+    if (pontos_carta1 > pontos_carta2)
+    printf("Carta 1 venceu em %d de 2 critérios\n", pontos_carta1);
+else if (pontos_carta2 > pontos_carta1)
+    printf("Carta 2 venceu em %d de 2 critérios\n", pontos_carta2);
+else
+    printf("Empate: 1 vitória para cada país\n");
+
 
    
     return 0;
