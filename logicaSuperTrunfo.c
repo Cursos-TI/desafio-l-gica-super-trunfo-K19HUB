@@ -101,20 +101,94 @@ int main() {
             // o PIB é float e o número de habitantes é int 
            //fazendo a divisão o resultado saira em float
 
-    
+    //menu interativo
     // Comparação de Cartas:
     // Desenvolva a lógica de comparação entre duas cartas.
     // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
-  printf("comparação de cartas (atributo: População):\n\n");
-    printf("carta 1 - %s: %d\n",nome_da_cidade1,numero_habitantes1);
+    printf("Escolha uma opção:\n");
+    printf("1 - Nome do país\n");
+    printf("2 - População\n");
+    printf("3 - Área\n");
+    printf("4 - PIB \n");
+    printf("5 - Número de pontos turísticos\n");
+    printf("6 - Densidade demográfica\n");
 
-    printf("carta 2 - %s: %d\n",nome_da_cidade2,numero_habitantes2); 
-    
-    if(numero_habitantes1>numero_habitantes2){
-        printf("Resultado: carta 1 (%s) venceu",nome_da_cidade1);
-    }else{
-        printf("Resultado: carta 2 (%s) venceu",nome_da_cidade2);
-    }
+    switch (opcao) {
+        
+        //nome de paises 
+        case 1:
+            printf("(%s VS %s)\n",nome_do_pais1,nome_do_pais2);
+            break;
+          
+       // população 
+        case 2:
+            printf("Países: (%s VS %s)\n",nome_do_pais1,nome_do_pais2);
+            printf("População:\n");
+            printf("%s tem %d habitantes\n  %s tem %d habitantes\n",nome_do_pais1,numero_habitantes1,nome_do_pais2,numero_habitantes2);
+
+        if(numero_habitantes1>numero_habitantes2){
+            printf("carta 1 venceu");
+        }else{
+            printf("carta 2 venceu");
+        }
+        break;
+        
+        //Área 
+        case 3:
+            printf("Países: (%s VS %s)\n",nome_do_pais1,nome_do_pais2);
+            printf("Área:\n");
+            printf("%s tem %f km²\n  %s tem %f km²\n",nome_do_pais1,area_cidade1,nome_do_pais2,area_cidade2);
+
+        if (area_pais1>area_pais2){
+            printf("carta 1 venceu");
+        }else{
+            printf("carta 2 venceu");
+        }
+            break;
+    //PIB
+       case 4:
+           printf("Países: (%s VS %s)\n",nome_do_pais1,nome_do_pais2);
+           printf("PIB:\n");
+           printf("%s tem %f de PIB \n  %s tem %f de PIB\n",nome_do_pais1,pib1,nome_do_pais2,pib2);
+
+     if (pib1>pib2){
+            printf("carta 1 venceu");
+        }else{
+            printf("carta 2 venceu");
+        }
+        break;
+        
+        //Numeros de pontos turistucos 
+     case 5:
+           printf("Países: (%s VS %s)\n",nome_do_pais1,nome_do_pais2);
+           printf("Numero de ponto turísticos:\n");
+           printf("%s tem %d de Pontos turísticos \n  %s tem %d de Pontos turísticos\n",nome_do_pais1,pontos_turisticos1,nome_do_pais2,pontos_turisticos2);
+
+     if (pontos_turisticos1>pontos_turisticos2){
+            printf("carta 1 venceu");
+        }else{
+            printf("carta 2 venceu");
+          }
+        break;
+
+    //densidade demográfica 
+     case 6:
+           printf("Países: (%s VS %s)\n",nome_do_pais1,nome_do_pais2);
+           printf("Densidade demografica :\n");
+           printf(" %s tem %f hab/km²\n  %s tem %f de hab/km²\n",nome_do_pais1,densidade_populacional1,nome_do_pais2,densidade_populacional2);
+
+     if (pib1>pib2){
+            printf("carta 1 venceu");
+        }else{
+            printf("carta 2 venceu");
+        }
+        break;
+     
+    default: 
+         printf("opção inválido");
+        
+    break;
+
 
 
     // Exibição dos Resultados:
